@@ -24,6 +24,9 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
+	<!-- Define location of static resources -->
+	<mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
+
 </beans>
 
 
