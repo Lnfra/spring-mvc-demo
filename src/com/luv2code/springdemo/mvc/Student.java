@@ -9,15 +9,31 @@ public class Student {
   private String country;
   private LinkedHashMap<String, String> countryOptions; 
   private String favoriteLanguage;
+  private LinkedHashMap<String, String> favoriteLanguageOptions;
   
   public Student(){
     //populate country options: used ISO country code
-    countryOptions = new LinkedHashMap<>();
-    countryOptions.put("BR", "Brazil");
-    countryOptions.put("FR", "France");
-    countryOptions.put("DE", "Germany");
-    countryOptions.put("IN", "India");
-    countryOptions.put("US", "United States of America");
+    countryOptions = createCountryOptions();
+    favoriteLanguageOptions = createFavoriteLanguageOptions();
+  }
+  
+  private LinkedHashMap<String, String> createFavoriteLanguageOptions(){
+    LinkedHashMap<String,String> options = new LinkedHashMap<>();
+    options.put("Java", "Java");
+    options.put("C#", "C#");
+    options.put("PHP", "PHP");
+    options.put("Ruby", "Ruby");
+    return options;
+  }
+  
+  private LinkedHashMap<String,String> createCountryOptions(){
+    LinkedHashMap<String, String> options = new LinkedHashMap<>();
+    options.put("BR", "Brazil");
+    options.put("FR", "France");
+    options.put("DE", "Germany");
+    options.put("IN", "India");
+    options.put("US", "United States of America");
+    return options;
   }
 
   public String getFirstName() {
@@ -56,6 +72,8 @@ public class Student {
     this.favoriteLanguage = favouriteLanguage;
   }
   
-  
+  public LinkedHashMap<String, String> getFavoriteLanguageOptions(){
+    return favoriteLanguageOptions;
+  }
   
 }
